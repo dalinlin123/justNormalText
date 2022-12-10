@@ -4,25 +4,26 @@ import About from "./views/About.vue";
 
 
 
-const routes = [
-    {
+const routes:RouteRecordRaw[] = [
+     {
         name: 'Home',
-        comments:Home,
-        path: '/home',   
+        component: Home,
+        path: '/',
     },
     {
         name: 'About',
-        comments:About,
-        path: '/about',  
-        hidden: true,
+        component: About,
+        path: '/about',
+        hidden: true, 
         meta: {
-            title: "关于我们",
+            title: '关于我们',
             isAdmin: false,
-            requireAuth: true
-        }
+            requiresAuth: true,
+        },
     },
 ]
 const router = createRouter({
     routes,
     history:createWebHashHistory()
 })
+export default router
