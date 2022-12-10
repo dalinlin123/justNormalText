@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { nextTick, ref, computed, ComputedRef, watch } from 'vue';
+import Grandson from "./Grandson.vue"
 const count = ref<number>(0)
 const ipt = ref<HTMLInputElement | null>(null);
 const toggleModal = ref<boolean>(false);
-const inputValue = ref(""); // 初始值为空字符串
+const inputValue = ref(""); 
 
 const handleInput = (e: Event) => {
   console.log((e.target as HTMLInputElement).value);
@@ -64,6 +65,7 @@ const stepCount: ComputedRef<(step: number) => number> = computed(() => {
     <p>stepCount:{{ stepCount(5) }}</p>
     <p>msg:{{ msg }}</p>
     <p>birthday:{{ birthday }}</p>
+    <Grandson/>
     <input type="text " ref="ipt" v-modle="count" @input="handleInput">
   </div>
 </Teleport>
