@@ -1,9 +1,10 @@
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import Home from "./views/Home.vue";
 import About from "./views/About.vue";
 
 
 
-const router = [
+const routes = [
     {
         name: 'Home',
         comments:Home,
@@ -21,3 +22,7 @@ const router = [
         }
     },
 ]
+const router = createRouter({
+    routes,
+    history:createWebHashHistory()
+})
